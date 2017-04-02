@@ -39,5 +39,7 @@ public class CompositionTest
         RecursiveFunction add = new Recursion(new Right(new Zero()), new Left(new Left(new Successor())));
         RecursiveFunction composition = new Composition(add, new Left(new Successor()), new Right(new Identity()));
         assertEquals(new Vector(5), composition.apply(new Vector(4, 5)));
+        assertEquals(new Vector(4), composition.apply(new Vector(3, 5)));
+        assertEquals(new Vector(3), composition.apply(new Vector(2, 0)));
     }
 }
